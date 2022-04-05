@@ -1,0 +1,62 @@
+fxID:
+
+Train details:
+
+tName  -> reqTNum()
+tNum   -> reqSrc()
+src	-> reqDest
+dest	reqF2a
+f2a	reqF3a
+f3a	reqFSl
+fSl
+mon
+tue
+wed
+thu
+fri
+sat
+sun
+tTableView
+addTrainBtn    -> addTrain()
+
+
+route creator :
+
+cTrain    
+cStation
+arT
+drT
+rTableView
+addRouteBtn   -> addRoute()
+
+
+
+
+
+
+Variables from Controller;
+String trainName = "";  
+String tSrc="";	
+String tDest ="";	
+double tF2a = 0;	
+double tF3a = 0;	
+double tFSl = 0;
+boolean tmon= false;
+boolean ttue= false;
+boolean twed= false;
+boolean tthu= false;
+boolean tfri= false;
+boolean tsat= false;
+boolean tsun = false;
+
+
+
+Station page:
+
+sCode
+sName
+aStation
+
+TicketTable : 
+pnrField
+classField

@@ -1,0 +1,5 @@
+cTNum -> cGetStations
+cSrc
+cDest
+
+cClass   -> cGetFare

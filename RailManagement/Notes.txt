@@ -1,0 +1,57 @@
+TrainTable:
+
+Name
+Num
+Src
+dest
+time
+SL 
+3A
+2A
+
+CREATE TABLE `rail`.`traintable` (
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(100) NOT NULL,
+  `Num` INT NOT NULL,
+  `Src` VARCHAR(45) NOT NULL,
+  `Dest` VARCHAR(45) NOT NULL,
+  `F2a` INT NOT NULL DEFAULT 0,
+  
+`F3a` INT NOT NULL DEFAULT 0,
+  `Fsl` INT NOT NULL DEFAULT 0,
+  PRIMARY KEY (`Id`));
+
+
+DayTable
+
+TNumber      -> foreign key (refering num of TrainTable)
+Mon
+Tue
+Wed
+Thurs
+Fri
+Sat
+Sun
+
+
+TrainStationTable
+StationName
+TNumber     -> foreign key (refering num of TrainTable)
+Arrival
+departure
+
+
+
+
+StationTable
+
+StationCode
+StationName
+
+
+ 
+
+
+
+
+

@@ -1,0 +1,124 @@
+//Create TrainTable
+
+CREATE TABLE `rail`.`traintable` (
+  
+`Id` INT NOT NULL AUTO_INCREMENT,
+ 
+ `Name` VARCHAR(100) NOT NULL,
+ 
+ `Number` Varchar(50) NOT NULL,
+ 
+ `Src` VARCHAR(45) NOT NULL,
+  `Dest` VARCHAR(45) NOT NULL,
+  
+`Fare2a` INT NOT NULL DEFAULT 0,
+  
+`Fare3a` INT NOT NULL DEFAULT 0,
+ 
+ `FareSL` INT NOT NULL DEFAULT 0,
+ Mon TinyInt, 
+Tue TinyInt, 
+Wed TinyInt,
+Thu TinyInt, 
+Fri TinyInt, 
+Sat TinyInt, 
+Sun TinyInt, 
+KEY ( Number), PRIMARY KEY (`Id`));
+
+
+
+
+//CREATE DayTable.
+
+
+CREATE TABLE IF NOT EXISTS DayTable( 
+`Train_Number` Varchar(50), 
+
+ INDEX par_ind (Train_Number),
+  CONSTRAINT fk_trainTable FOREIGN KEY (Train_Number)
+  	REFERENCES traintable (Number)
+		ON DELETE CASCADE
+  		ON UPDATE CASCADE 
+
+) ENGINE=INNODB;
+
+
+// Create StatinTable.
+CREATE TABLE STATIONTABLE (
+`Id` int NOT NULL AUTO_INCREMENT,
+ STATION_CODE VARCHAR(20) NOT NULL,
+STATION_NAME VARCHAR(20) NOT NULL, 
+KEY ( STATION_NAME ) ,
+ PRIMARY KEY (`Id`));
+
+
+
+//CREATE ROUTETABLE.
+
+
+CREATE TABLE IF NOT EXISTS ROUTETABLE( 
+Train_Number Varchar(50),
+ Station_Name varchar(200), 
+Arrival varchar(200),
+Departure varchar(200) ,
+ INDEX par_ind (Train_Number),
+  CONSTRAINT fk_routetrainTable FOREIGN KEY (Train_Number)
+  	REFERENCES traintable (Number)
+		ON DELETE CASCADE
+  		ON UPDATE CASCADE, 
+INDEX par_ind2 (Station_Name),
+  CONSTRAINT fk_routestationtable FOREIGN KEY (Station_Name)
+  	REFERENCES STATIONTABLE (STATION_NAME)  
+		ON DELETE CASCADE
+  		ON UPDATE CASCADE
+) ENGINE=INNODB;
+
+
+
+//Create TicketTable
+
+CREATE TABLE tickettable (
+ 
+ `PNR` INT NOT NULL AUTO_INCREMENT,
+ 
+ `Train_Number` VARCHAR(100) NOT NULL,
+ 
+ `Class` Varchar(50) NOT NULL,
+ 
+ `Src` VARCHAR(45) NOT NULL,
+  `Dest` VARCHAR(45) NOT NULL,
+ 
+ `TotalFare` Double NOT NULL DEFAULT 0,
+
+PRIMARY KEY (PNR));
+
+
+
+
+//CREATE PassengerTable.
+
+
+CREATE TABLE IF NOT EXISTS PassengerTable( 
+PNR_Num INT,
+ Name Varchar(50),
+Age Varchar(50),
+Gender Varchar(50),
+Seat Varchar(50),
+ INDEX par_ind (PNR_Num),
+  CONSTRAINT fk_ticketTable FOREIGN KEY (PNR_Num)
+  	REFERENCES tickettable (PNR)
+		ON DELETE CASCADE
+  		ON UPDATE CASCADE 
+
+) ENGINE=INNODB;
+
+
+
+
+// truncate table which has foreign key contraints.
+
+SET FOREIGN_KEY_CHECKS = 0;
+truncate tableName;
+SET FOREIGN_KEY_CHECKS = 1;
+
+// done.
