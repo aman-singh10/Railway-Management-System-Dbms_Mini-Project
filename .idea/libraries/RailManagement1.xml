@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="RailManagement1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RailManagement/dist/RailManagement.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

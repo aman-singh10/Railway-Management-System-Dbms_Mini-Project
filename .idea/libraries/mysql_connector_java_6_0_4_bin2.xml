@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mysql-connector-java-6.0.4-bin2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/RailManagement/RailManagement/dist/lib/mysql-connector-java-6.0.4-bin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
